@@ -16,7 +16,7 @@ const clean         = require('gulp-clean');
 // Paths
 var paths = {
     root: { 
-        www:        './public_html'
+        www:        'https://jumana07.github.io/JumanaHaseenPortfolio-Project/public_html/index.html'
     },
     src: {
         root:       'public_html/assets',
