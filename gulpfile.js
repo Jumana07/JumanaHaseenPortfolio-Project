@@ -16,23 +16,23 @@ const clean         = require('gulp-clean');
 // Paths
 var paths = {
     root: { 
-        www:        '/public_html'
+        www:        '/docs'
     },
     src: {
-        root:       'public_html/assets',
-        html:       'public_html/**/*.html',
-        css:        'public_html/assets/css/*.css',
-        js:         'public_html/assets/js/*.js',
-        vendors:    'public_html/assets/vendors/**/*.*',
-        imgs:       'public_html/assets/imgs/**/*.+(png|jpg|gif|svg)',
-        scss:       'public_html/assets/scss/**/*.scss'
+        root:       'docs/assets',
+        html:       'docs/**/*.html',
+        css:        'docs/assets/css/*.css',
+        js:         'docs/assets/js/*.js',
+        vendors:    'docs/assets/vendors/**/*.*',
+        imgs:       'docs/assets/imgs/**/*.+(png|jpg|gif|svg)',
+        scss:       'docs/assets/scss/**/*.scss'
     },
     dist: {
-        root:       'public_html/dist',
-        css:        'public_html/dist/css',
-        js:         'public_html/dist/js',
-        imgs:       'public_html/dist/imgs',
-        vendors:    'public_html/dist/vendors'
+        root:       'docs/dist',
+        css:        'docs/dist/css',
+        js:         'docs/dist/js',
+        imgs:       'docs/dist/imgs',
+        vendors:    'docs/dist/vendors'
     }
 }
 
@@ -49,7 +49,7 @@ gulp.task('sass', function() {
 gulp.task('css', function() {
     return gulp.src(paths.src.css)
     .pipe(cleanCSS({compatibility: 'ie8'}))
-    .pipe(concat('johndoe.css'))
+    .pipe(concat('Jumana.css'))
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest(paths.dist.css))
 });
@@ -58,7 +58,7 @@ gulp.task('css', function() {
 gulp.task('js', function() {
     return gulp.src(paths.src.js)
     .pipe(uglify())
-    .pipe(concat('johndoe.js'))
+    .pipe(concat('jumana.js'))
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest(paths.dist.js))
     .pipe(browserSync.stream());
